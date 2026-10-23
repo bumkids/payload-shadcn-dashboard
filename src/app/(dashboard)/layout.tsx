@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils"
 import type { Metadata } from "next"
-// @ts-expect-error Next.js handles global CSS imports at build time.
 import "./globals.css"
 
 import { ThemeProvider } from "@/components/theme-provider"
