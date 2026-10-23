@@ -18,5 +18,8 @@
     "lib": "@/lib",
     "hooks": "@/hooks"
   },
-  "registries": {}
+  "registries": {},
+  "menuColor": "default",
+  "menuAccent": "subtle",
+  "style": "base-nova"
 }

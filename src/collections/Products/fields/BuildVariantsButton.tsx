@@ -75,7 +75,8 @@ function generateVariantCombinations(options: Option[]): Variant[] {
             options: combo,
             originalPrice: null,
             price: 0,
-            vid: null,
+            // vid: null,
+            vid: crypto.randomUUID(),
         }));
     } catch (error) {
         console.error("Error generating variant combinations:", error);
