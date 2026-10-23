@@ -113,14 +113,13 @@ export const HeroSection: ComponentConfig<HeroSectionProps> = {
         <p className="text-xl sm:text-2xl mb-8 text-muted-foreground text-pretty">{subtitle}</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
           {ctaText && (
-            <Button size="lg" asChild>
+            <Button size="lg" render={
               <a href={ctaLink || '#'}>{ctaText}</a>
-            </Button>
+            }/>
           )}
           {secondaryCtaText && (
-            <Button variant="outline" size="lg" asChild>
-              <a href={secondaryCtaLink || '#'}>{secondaryCtaText}</a>
-            </Button>
+            <Button variant="outline" size="lg" render={
+              <a href={secondaryCtaLink || '#'}>{secondaryCtaText}</a>} />
           )}
         </div>
         {heroImage && (

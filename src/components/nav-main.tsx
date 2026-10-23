@@ -52,7 +52,7 @@ export function NavMain({
         {items.map((item) => (
           <Collapsible
             key={item.title}
-            defaultOpen={shouldBeOpen(item)}
+            defaultOpen={shouldBeOpen(item) ?? false}
             className="group/collapsible"
             render={<SidebarMenuItem />}
           >

@@ -1,11 +1,14 @@
 import { cn } from "@/lib/utils"
 import type { Metadata } from "next"
+// @ts-expect-error Next.js handles global CSS imports at build time.
 import "./globals.css"
 
 import { ThemeProvider } from "@/components/theme-provider"
 import { SidebarConfigProvider } from "@/contexts/sidebar-context"
 import { Toaster } from "@/components/ui/toast"
 import { inter } from "@/lib/fonts"
+
+import { AuthProvider } from "@/contexts/auth-context"
 
 export const metadata: Metadata = {
   title: "Shadcn Dashboard",
@@ -20,11 +23,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={cn(inter.variable, "antialiased")}>
       <body className={inter.className}>
-        <ThemeProvider defaultTheme="system" storageKey="nextjs-ui-theme">
-          <SidebarConfigProvider>
-            <Toaster>{children}</Toaster>
-          </SidebarConfigProvider>
-        </ThemeProvider>
+        <AuthProvider>
+          <ThemeProvider defaultTheme="system" storageKey="nextjs-ui-theme">
+            <SidebarConfigProvider>
+              <Toaster>{children}</Toaster>
+            </SidebarConfigProvider>
+          </ThemeProvider>
+        </AuthProvider>
       </body>
     </html>
   )
