@@ -37,7 +37,7 @@ export function CartDrawer({
                 setOpen(val);
             }}
         >
-            <SheetTrigger asChild>
+            <SheetTrigger render={
                 <Button variant="ghost" size="icon" className="relative">
                     <ShoppingCart className="h-5 w-5" />
                     {totalItems > 0 && (
@@ -50,7 +50,7 @@ export function CartDrawer({
                     )}
                     <span className="sr-only">Shopping cart</span>
                 </Button>
-            </SheetTrigger>
+           } />
             <SheetContent className="w-full sm:max-w-lg">
                 <SheetHeader>
                     <SheetTitle className="flex items-center gap-2">

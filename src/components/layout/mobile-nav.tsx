@@ -18,12 +18,12 @@ export function MobileNav() {
 
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
-      <SheetTrigger asChild>
+      <SheetTrigger render={
         <Button variant="ghost" size="icon" className="md:hidden">
           <Menu className="h-5 w-5" />
           <span className="sr-only">Menu</span>
         </Button>
-      </SheetTrigger>
+    }/>
       <SheetContent side="left" className="w-80">
         <SheetHeader>
           <SheetTitle className="flex items-center gap-2">

@@ -44,32 +44,31 @@ export function AccountMenu() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
+      <DropdownMenuTrigger render={
         <Button variant="ghost" size="sm" className="relative">
           <User className="h-4 w-4" />
           <span className="ml-2 hidden sm:inline">
             {user.firstName || user.email.split('@')[0]}
           </span>
         </Button>
-      </DropdownMenuTrigger>
+      } />
       <DropdownMenuContent align="end" className="w-56">
         <div className="px-2 py-1.5 text-sm font-medium">
           {user.firstName ? `${user.firstName} ${user.lastName || ''}` : user.email}
         </div>
         <div className="px-2 py-1.5 text-xs text-gray-500">{user.email}</div>
         <DropdownMenuSeparator />
-        <DropdownMenuItem asChild>
+        <DropdownMenuItem render={
           <Link href="/account" className="flex items-center">
             <Settings className="mr-2 h-4 w-4" />
             Account Settings
           </Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem asChild>
+        } />
+        <DropdownMenuItem render={
           <Link href="/account#orders" className="flex items-center">
             <Package className="mr-2 h-4 w-4" />
             Order History
-          </Link>
-        </DropdownMenuItem>
+          </Link>} />
         <DropdownMenuSeparator />
         <DropdownMenuItem
           onClick={handleLogout}

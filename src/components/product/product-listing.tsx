@@ -21,7 +21,7 @@ interface ProductListingProps {
 }
 
 export function ProductListing({ products, categories, initialSearchQuery }: ProductListingProps) {
-    const [sortBy, setSortBy] = useState<string>("name");
+    const [sortBy, setSortBy] = useState<string|null>("name");
     const [showFilters, setShowFilters] = useState(false);
     const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
     const [searchQuery, setSearchQuery] = useState(initialSearchQuery || "");

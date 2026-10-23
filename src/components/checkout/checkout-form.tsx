@@ -361,7 +361,7 @@ export function CheckoutForm() {
                                     <Select
                                         value={formData.state}
                                         onValueChange={(value) =>
-                                            handleInputChange("state", value)
+                                            handleInputChange("state", value??"")
                                         }
                                     >
                                         <SelectTrigger>
@@ -409,7 +409,7 @@ export function CheckoutForm() {
                                     <Select
                                         value={formData.country}
                                         onValueChange={(value) =>
-                                            handleInputChange("country", value)
+                                            handleInputChange("country", value??"")
                                         }
                                     >
                                         <SelectTrigger>

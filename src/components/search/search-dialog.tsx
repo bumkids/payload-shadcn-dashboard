@@ -89,14 +89,20 @@ export function SearchDialog({ trigger }: SearchDialogProps) {
 
     return (
         <Dialog open={open} onOpenChange={setOpen}>
-            <DialogTrigger asChild>
+            {/* <DialogTrigger asChild>
                 {trigger || (
                     <Button variant="ghost" size="icon">
                         <Search className="h-5 w-5" />
                         <span className="sr-only">Search</span>
                     </Button>
                 )}
-            </DialogTrigger>
+            </DialogTrigger> */}
+            <DialogTrigger render={trigger ? <>{trigger}</> :  (
+                    <Button variant="ghost" size="icon">
+                        <Search className="h-5 w-5" />
+                        <span className="sr-only">Search</span>
+                    </Button>
+                ) } />
             <DialogContent className="max-w-2xl p-0 gap-0">
                 <div className="flex items-center border-b px-6 py-4">
                     <Search className="h-5 w-5 text-muted-foreground mr-3" />
